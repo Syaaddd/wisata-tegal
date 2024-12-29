@@ -1,0 +1,364 @@
+INFO - 2024-12-29 05:24:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 05:24:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 05:34:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 05:35:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 10:11:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 10:12:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 10:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 10:49:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 10:49:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 10:49:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 10:50:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-29 10:59:57 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'wisata', 3306, '', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\wisata-tegal\system\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('fwfw', 'username', Array, NULL, 'login_id')
+#6 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'fwfw', Array, Array, 'login_id')
+#7 C:\xampp\htdocs\wisata-tegal\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\wisata-tegal\app\Controllers\AuthController.php(47): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+#10 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\wisata-tegal\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\wisata-tegal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\wisata-tegal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\wisata-tegal\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\wisata-tegal\system\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('fwfw', 'username', Array, NULL, 'login_id')
+#5 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'fwfw', Array, Array, 'login_id')
+#6 C:\xampp\htdocs\wisata-tegal\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#7 C:\xampp\htdocs\wisata-tegal\app\Controllers\AuthController.php(47): CodeIgniter\Controller->validate(Array)
+#8 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+#9 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wisata-tegal\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\wisata-tegal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\wisata-tegal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\wisata-tegal\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2024-12-29 10:59:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: admin/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `username` = :username:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('fwfw', 'username', [...], null, 'login_id')
+ 5 SYSTEMPATH\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'fwfw', [...], [...], 'login_id')
+ 6 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\AuthController.php(47): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+INFO - 2024-12-29 11:00:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 11:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-29 11:01:10 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'wisata', 3306, '', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\wisata-tegal\system\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('syadd', 'username', Array, NULL, 'login_id')
+#6 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'syadd', Array, Array, 'login_id')
+#7 C:\xampp\htdocs\wisata-tegal\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\wisata-tegal\app\Controllers\AuthController.php(47): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+#10 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\wisata-tegal\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\wisata-tegal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\wisata-tegal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\wisata-tegal\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\wisata-tegal\system\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('syadd', 'username', Array, NULL, 'login_id')
+#5 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'syadd', Array, Array, 'login_id')
+#6 C:\xampp\htdocs\wisata-tegal\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#7 C:\xampp\htdocs\wisata-tegal\app\Controllers\AuthController.php(47): CodeIgniter\Controller->validate(Array)
+#8 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+#9 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wisata-tegal\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\wisata-tegal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\wisata-tegal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\wisata-tegal\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2024-12-29 11:01:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: admin/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `username` = :username:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('syadd', 'username', [...], null, 'login_id')
+ 5 SYSTEMPATH\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'syadd', [...], [...], 'login_id')
+ 6 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\AuthController.php(47): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+INFO - 2024-12-29 11:01:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 11:07:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-29 11:07:09 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'wisata', 3306, '', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\wisata-tegal\system\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('syadd', 'username', Array, NULL, 'login_id')
+#6 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'syadd', Array, Array, 'login_id')
+#7 C:\xampp\htdocs\wisata-tegal\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\wisata-tegal\app\Controllers\AuthController.php(47): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+#10 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\wisata-tegal\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\wisata-tegal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\wisata-tegal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\wisata-tegal\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\wisata-tegal\system\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('syadd', 'username', Array, NULL, 'login_id')
+#5 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'syadd', Array, Array, 'login_id')
+#6 C:\xampp\htdocs\wisata-tegal\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#7 C:\xampp\htdocs\wisata-tegal\app\Controllers\AuthController.php(47): CodeIgniter\Controller->validate(Array)
+#8 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+#9 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wisata-tegal\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\wisata-tegal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\wisata-tegal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\wisata-tegal\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2024-12-29 11:07:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: admin/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `username` = :username:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('syadd', 'username', [...], null, 'login_id')
+ 5 SYSTEMPATH\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'syadd', [...], [...], 'login_id')
+ 6 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\AuthController.php(47): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+ERROR - 2024-12-29 11:08:14 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'wisata', 3306, '', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\wisata-tegal\system\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('syadd', 'username', Array, NULL, 'login_id')
+#6 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'syadd', Array, Array, 'login_id')
+#7 C:\xampp\htdocs\wisata-tegal\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\wisata-tegal\app\Controllers\AuthController.php(47): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+#10 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\wisata-tegal\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\wisata-tegal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\wisata-tegal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\wisata-tegal\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\wisata-tegal\system\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('syadd', 'username', Array, NULL, 'login_id')
+#5 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'syadd', Array, Array, 'login_id')
+#6 C:\xampp\htdocs\wisata-tegal\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#7 C:\xampp\htdocs\wisata-tegal\app\Controllers\AuthController.php(47): CodeIgniter\Controller->validate(Array)
+#8 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+#9 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wisata-tegal\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\wisata-tegal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\wisata-tegal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\wisata-tegal\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2024-12-29 11:08:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: admin/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `username` = :username:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('syadd', 'username', [...], null, 'login_id')
+ 5 SYSTEMPATH\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'syadd', [...], [...], 'login_id')
+ 6 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\AuthController.php(47): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+INFO - 2024-12-29 11:11:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 11:11:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 11:11:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 11:12:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 11:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 11:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 11:16:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 11:16:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 11:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 11:17:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 11:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 11:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-29 11:20:43 --> Error: Class "App\Libraries\Hash" not found
+[Method: POST, Route: admin/login]
+in APPPATH\Controllers\AuthController.php on line 74.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-29 11:22:40 --> Error: Class "App\Libraries\Hash" not found
+[Method: POST, Route: admin/login]
+in APPPATH\Controllers\AuthController.php on line 74.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+INFO - 2024-12-29 11:22:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-29 11:22:55 --> Error: Class "App\Libraries\Hash" not found
+[Method: POST, Route: admin/login]
+in APPPATH\Controllers\AuthController.php on line 74.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-29 11:25:20 --> Error: Class "App\Libraries\Hash" not found
+[Method: POST, Route: admin/login]
+in APPPATH\Controllers\AuthController.php on line 74.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+INFO - 2024-12-29 11:25:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-29 11:25:36 --> Error: Class "App\Libraries\Hash" not found
+[Method: POST, Route: admin/login]
+in APPPATH\Controllers\AuthController.php on line 74.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+INFO - 2024-12-29 11:29:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:43:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:44:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:47:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:49:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:49:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:53:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 12:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-29 13:15:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "backend/pages/dashboard.php"
+[Method: GET, Route: admin/home]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('backend/pages/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('backend/pages/dashboard', [], true)
+ 3 APPPATH\Controllers\AdminController.php(15): view('backend/pages/dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+INFO - 2024-12-29 13:52:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 13:52:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 19:54:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 19:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 19:55:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:09:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:09:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:09:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:10:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:10:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:18:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:19:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:19:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-29 20:58:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
