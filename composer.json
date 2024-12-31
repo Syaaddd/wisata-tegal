@@ -14,6 +14,7 @@
         "ext-intl": "*",
         "ext-mbstring": "*",
         "laminas/laminas-escaper": "^2.13",
+        "nesbot/carbon": "^3.8",
         "psr/log": "^3.0"
     },
     "require-dev": {

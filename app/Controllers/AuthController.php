@@ -7,10 +7,12 @@ use CodeIgniter\HTTP\ResponseInterface;
 use App\Libraries\CIAuth;
 use App\Libraries\Hash;
 use App\Models\User;
+use Carbon\Carbon;
+use App\Models\PasswordResetToken;
 
 class AuthController extends BaseController
 {
-    protected $helpers = ['form', 'url'];
+    protected $helpers = ['form', 'url', 'CIMail'];
     public function loginForm()
     {
         $data = [
@@ -72,10 +74,10 @@ class AuthController extends BaseController
             $user = new User();
             $userInfo = $user->where($fieldType, $this->request->getVar('login_id'))->first();
             $check_password = Hash::check($this->request->getVar('password'), $userInfo['password']);
-            
+
             if (!$check_password) {
                 return redirect()->route('admin.login.form')->with('fail', 'Password is incorrect')->withInput();
-            }else{
+            } else {
                 CIAuth::setCIAuth($userInfo);
                 return redirect()->route('admin.home');
             }
@@ -91,7 +93,32 @@ class AuthController extends BaseController
         return view('backend/pages/auth/forgot', $data);
     }
 
-    public function sendPasswordResetLink(){
-        echo 'sendPasswordResetLink';
+    public function sendPasswordResetLink()
+    {
+        $isValid = $this->validate([
+            'email' => [
+                'rules' => 'required|valid_email|is_not_unique[users.email]',
+                'errors' => [
+                    'required' => 'Email is required',
+                    'valid_email' => 'Email is not valid',
+                    'is_not_unique' => 'Email is not registered'
+                ]
+            ]
+        ]);
+
+        if (!$isValid) {
+            return view('backend/pages/auth/forgot', [
+                'pageTitle' => 'Forgot Password',
+                'validation' => $this->validator
+            ]);
+        } else {
+            $user = new User();
+            $userInfo = $user->asObject()->where('email', $this->request->getVar('email'))->first();
+
+            $token = bin2hex(openssl_random_pseudo_bytes(65));
+
+            $password_reset_token = new PasswordResetToken();
+            $isOldTokenExists = $password_reset_token->asObject()->where('email',$user_info->email)->first();
+        }
     }
 }
