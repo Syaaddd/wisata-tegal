@@ -22,7 +22,6 @@ class CreatePasswordResetTokensTable extends Migration
                 ],
                 'created_at timestamp default current_timestamp',
             ]);
-            $this->forge->addKey('email', true);
             $this->forge->createTable('password_reset_tokens');
         }
 

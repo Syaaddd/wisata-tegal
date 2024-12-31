@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class PasswordResetToken extends Model
 {
-    protected $table            = 'passwordresettokens';
+    protected $table            = 'password_reset_tokens';
     protected $DBGroup          = 'default';
     protected $allowedFields    = ['email', 'token', 'created_at'];
 

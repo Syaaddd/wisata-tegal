@@ -1,0 +1,737 @@
+INFO - 2024-12-31 01:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-31 01:41:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-31 07:33:49 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'wisatategal2' in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'wisatategal2', 3306, '', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\wisata-tegal\system\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('admin@gmail.com', 'email', Array, NULL, 'login_id')
+#6 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'admin@gmail.com', Array, Array, 'login_id')
+#7 C:\xampp\htdocs\wisata-tegal\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\wisata-tegal\app\Controllers\AuthController.php(30): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+#10 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\wisata-tegal\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\wisata-tegal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\wisata-tegal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\wisata-tegal\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'wisatategal2' in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\wisata-tegal\system\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('admin@gmail.com', 'email', Array, NULL, 'login_id')
+#5 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'admin@gmail.com', Array, Array, 'login_id')
+#6 C:\xampp\htdocs\wisata-tegal\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#7 C:\xampp\htdocs\wisata-tegal\app\Controllers\AuthController.php(30): CodeIgniter\Controller->validate(Array)
+#8 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+#9 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wisata-tegal\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\wisata-tegal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\wisata-tegal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\wisata-tegal\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2024-12-31 07:33:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'wisatategal2'
+[Method: POST, Route: admin/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('admin@gmail.com', 'email', [...], null, 'login_id')
+ 5 SYSTEMPATH\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'admin@gmail.com', [...], [...], 'login_id')
+ 6 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\AuthController.php(30): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+ERROR - 2024-12-31 07:33:53 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'wisatategal2' in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'wisatategal2', 3306, '', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\wisata-tegal\system\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('admin@gmail.com', 'email', Array, NULL, 'login_id')
+#6 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'admin@gmail.com', Array, Array, 'login_id')
+#7 C:\xampp\htdocs\wisata-tegal\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\wisata-tegal\app\Controllers\AuthController.php(30): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+#10 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\wisata-tegal\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\wisata-tegal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\wisata-tegal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\wisata-tegal\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'wisatategal2' in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\wisata-tegal\system\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('admin@gmail.com', 'email', Array, NULL, 'login_id')
+#5 C:\xampp\htdocs\wisata-tegal\system\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'admin@gmail.com', Array, Array, 'login_id')
+#6 C:\xampp\htdocs\wisata-tegal\system\Controller.php(137): CodeIgniter\Validation\Validation->run()
+#7 C:\xampp\htdocs\wisata-tegal\app\Controllers\AuthController.php(30): CodeIgniter\Controller->validate(Array)
+#8 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+#9 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\wisata-tegal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wisata-tegal\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\wisata-tegal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\wisata-tegal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\wisata-tegal\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2024-12-31 07:33:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'wisatategal2'
+[Method: POST, Route: admin/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(172): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(339): CodeIgniter\Validation\StrictRules\Rules->is_not_unique('admin@gmail.com', 'email', [...], null, 'login_id')
+ 5 SYSTEMPATH\Validation\Validation.php(204): CodeIgniter\Validation\Validation->processRules('login_id', 'login_id', 'admin@gmail.com', [...], [...], 'login_id')
+ 6 SYSTEMPATH\Controller.php(137): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\AuthController.php(30): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->loginHandler()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+ERROR - 2024-12-31 07:46:59 --> mysqli_sql_exception: Unknown table 'wisata_tegal.password_reset_tokens' in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(312): mysqli->query('DROP TABLE `pas...', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DROP TABLE `pas...')
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DROP TABLE `pas...')
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\Forge.php(663): CodeIgniter\Database\BaseConnection->query('DROP TABLE `pas...')
+#4 C:\xampp\htdocs\wisata-tegal\app\Database\Migrations\2024-12-29-233921_CreatePasswordResetTokensTable.php(31): CodeIgniter\Database\Forge->dropTable('password_reset_...')
+#5 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreatePasswordResetTokensTable->down()
+#6 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(290): CodeIgniter\Database\MigrationRunner->migrate('down', Object(stdClass))
+#7 C:\xampp\htdocs\wisata-tegal\system\Commands\Database\MigrateRollback.php(101): CodeIgniter\Database\MigrationRunner->regress(0)
+#8 C:\xampp\htdocs\wisata-tegal\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#10 C:\xampp\htdocs\wisata-tegal\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\wisata-tegal\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\wisata-tegal\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2024-12-31 07:50:21 --> mysqli_sql_exception: Unknown table 'wisata_tegal.password_reset_tokens' in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(312): mysqli->query('DROP TABLE `pas...', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DROP TABLE `pas...')
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DROP TABLE `pas...')
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\Forge.php(663): CodeIgniter\Database\BaseConnection->query('DROP TABLE `pas...')
+#4 C:\xampp\htdocs\wisata-tegal\app\Database\Migrations\2024-12-29-233921_CreatePasswordResetTokensTable.php(30): CodeIgniter\Database\Forge->dropTable('password_reset_...')
+#5 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreatePasswordResetTokensTable->down()
+#6 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(290): CodeIgniter\Database\MigrationRunner->migrate('down', Object(stdClass))
+#7 C:\xampp\htdocs\wisata-tegal\system\Commands\Database\MigrateRollback.php(101): CodeIgniter\Database\MigrationRunner->regress(0)
+#8 C:\xampp\htdocs\wisata-tegal\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#10 C:\xampp\htdocs\wisata-tegal\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\wisata-tegal\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\wisata-tegal\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2024-12-31 07:51:20 --> mysqli_sql_exception: Table 'migrations' already exists in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TABLE `m...', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `m...')
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `m...')
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `m...')
+#4 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(806): CodeIgniter\Database\Forge->createTable('migrations', true)
+#5 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\wisata-tegal\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\xampp\htdocs\wisata-tegal\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 C:\xampp\htdocs\wisata-tegal\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\wisata-tegal\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\wisata-tegal\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-12-31 07:55:01 --> mysqli_sql_exception: Table 'users' already exists in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TABLE `u...', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 C:\xampp\htdocs\wisata-tegal\app\Database\Migrations\2024-12-26-215853_CreateUserTable.php(46): CodeIgniter\Database\Forge->createTable('users')
+#5 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreateUserTable->up()
+#6 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\wisata-tegal\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\wisata-tegal\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\wisata-tegal\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\wisata-tegal\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\wisata-tegal\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2024-12-31 07:56:01 --> mysqli_sql_exception: Table '`wisata_tegal`.`migrations`' already exists in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TABLE `m...', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `m...')
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `m...')
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `m...')
+#4 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(806): CodeIgniter\Database\Forge->createTable('migrations', true)
+#5 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\wisata-tegal\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\xampp\htdocs\wisata-tegal\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 C:\xampp\htdocs\wisata-tegal\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\wisata-tegal\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\wisata-tegal\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-12-31 07:56:44 --> mysqli_sql_exception: Tablespace for table '`wisata_tegal`.`migrations`' exists. Please DISCARD the tablespace before IMPORT in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TABLE `m...', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `m...')
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `m...')
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `m...')
+#4 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(806): CodeIgniter\Database\Forge->createTable('migrations', true)
+#5 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(639): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\wisata-tegal\system\Commands\Database\MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+#7 C:\xampp\htdocs\wisata-tegal\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\MigrateStatus->run(Array)
+#8 C:\xampp\htdocs\wisata-tegal\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate:status', Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\wisata-tegal\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\wisata-tegal\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-12-31 07:56:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Tablespace for table '`wisata_tegal`.`migrations`' exists. Please DISCARD the tablespace before IMPORT
+[Method: CLI, Route: migrate:status]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 2 SYSTEMPATH\Database\MigrationRunner.php(806): CodeIgniter\Database\Forge->createTable('migrations', true)
+ 3 SYSTEMPATH\Database\MigrationRunner.php(639): CodeIgniter\Database\MigrationRunner->ensureTable()
+ 4 SYSTEMPATH\Commands\Database\MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+ 5 SYSTEMPATH\CLI\Commands.php(70): CodeIgniter\Commands\Database\MigrateStatus->run([])
+ 6 SYSTEMPATH\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate:status', [])
+ 7 SYSTEMPATH\Boot.php(351): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2024-12-31 07:56:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Tablespace for table '`wisata_tegal`.`migrations`' exists. Please DISCARD the tablespace before IMPORT
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 3 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 4 SYSTEMPATH\Database\MigrationRunner.php(806): CodeIgniter\Database\Forge->createTable('migrations', true)
+ 5 SYSTEMPATH\Database\MigrationRunner.php(639): CodeIgniter\Database\MigrationRunner->ensureTable()
+ 6 SYSTEMPATH\Commands\Database\MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+ 7 SYSTEMPATH\CLI\Commands.php(70): CodeIgniter\Commands\Database\MigrateStatus->run([])
+ 8 SYSTEMPATH\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate:status', [])
+ 9 SYSTEMPATH\Boot.php(351): CodeIgniter\CLI\Console->run()
+10 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+11 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2024-12-31 07:56:44 --> [Caused by] mysqli_sql_exception: Tablespace for table '`wisata_tegal`.`migrations`' exists. Please DISCARD the tablespace before IMPORT
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 5 SYSTEMPATH\Database\MigrationRunner.php(806): CodeIgniter\Database\Forge->createTable('migrations', true)
+ 6 SYSTEMPATH\Database\MigrationRunner.php(639): CodeIgniter\Database\MigrationRunner->ensureTable()
+ 7 SYSTEMPATH\Commands\Database\MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+ 8 SYSTEMPATH\CLI\Commands.php(70): CodeIgniter\Commands\Database\MigrateStatus->run([])
+ 9 SYSTEMPATH\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate:status', [])
+10 SYSTEMPATH\Boot.php(351): CodeIgniter\CLI\Console->run()
+11 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+12 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2024-12-31 07:57:16 --> mysqli_sql_exception: Tablespace for table '`wisata_tegal`.`migrations`' exists. Please DISCARD the tablespace before IMPORT in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TABLE `m...', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `m...')
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `m...')
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `m...')
+#4 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(806): CodeIgniter\Database\Forge->createTable('migrations', true)
+#5 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(639): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\wisata-tegal\system\Commands\Database\MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+#7 C:\xampp\htdocs\wisata-tegal\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\MigrateStatus->run(Array)
+#8 C:\xampp\htdocs\wisata-tegal\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate:status', Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\wisata-tegal\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\wisata-tegal\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-12-31 07:57:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Tablespace for table '`wisata_tegal`.`migrations`' exists. Please DISCARD the tablespace before IMPORT
+[Method: CLI, Route: migrate:status]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 2 SYSTEMPATH\Database\MigrationRunner.php(806): CodeIgniter\Database\Forge->createTable('migrations', true)
+ 3 SYSTEMPATH\Database\MigrationRunner.php(639): CodeIgniter\Database\MigrationRunner->ensureTable()
+ 4 SYSTEMPATH\Commands\Database\MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+ 5 SYSTEMPATH\CLI\Commands.php(70): CodeIgniter\Commands\Database\MigrateStatus->run([])
+ 6 SYSTEMPATH\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate:status', [])
+ 7 SYSTEMPATH\Boot.php(351): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2024-12-31 07:57:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Tablespace for table '`wisata_tegal`.`migrations`' exists. Please DISCARD the tablespace before IMPORT
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 3 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 4 SYSTEMPATH\Database\MigrationRunner.php(806): CodeIgniter\Database\Forge->createTable('migrations', true)
+ 5 SYSTEMPATH\Database\MigrationRunner.php(639): CodeIgniter\Database\MigrationRunner->ensureTable()
+ 6 SYSTEMPATH\Commands\Database\MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+ 7 SYSTEMPATH\CLI\Commands.php(70): CodeIgniter\Commands\Database\MigrateStatus->run([])
+ 8 SYSTEMPATH\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate:status', [])
+ 9 SYSTEMPATH\Boot.php(351): CodeIgniter\CLI\Console->run()
+10 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+11 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2024-12-31 07:57:16 --> [Caused by] mysqli_sql_exception: Tablespace for table '`wisata_tegal`.`migrations`' exists. Please DISCARD the tablespace before IMPORT
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `migrations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`version` VARCHAR(255) NOT NULL,
+	`class` VARCHAR(255) NOT NULL,
+	`group` VARCHAR(255) NOT NULL,
+	`namespace` VARCHAR(255) NOT NULL,
+	`time` INT(11) NOT NULL,
+	`batch` INT(11) UNSIGNED NOT NULL,
+	CONSTRAINT `pk_migrations` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 5 SYSTEMPATH\Database\MigrationRunner.php(806): CodeIgniter\Database\Forge->createTable('migrations', true)
+ 6 SYSTEMPATH\Database\MigrationRunner.php(639): CodeIgniter\Database\MigrationRunner->ensureTable()
+ 7 SYSTEMPATH\Commands\Database\MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+ 8 SYSTEMPATH\CLI\Commands.php(70): CodeIgniter\Commands\Database\MigrateStatus->run([])
+ 9 SYSTEMPATH\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate:status', [])
+10 SYSTEMPATH\Boot.php(351): CodeIgniter\CLI\Console->run()
+11 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+12 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2024-12-31 07:58:07 --> mysqli_sql_exception: Tablespace for table '`wisata_tegal`.`migrations`' exists. Please DISCARD the tablespace before IMPORT in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TABLE `m...', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `m...')
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `m...')
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `m...')
+#4 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(806): CodeIgniter\Database\Forge->createTable('migrations', true)
+#5 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\wisata-tegal\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\xampp\htdocs\wisata-tegal\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 C:\xampp\htdocs\wisata-tegal\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\wisata-tegal\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\wisata-tegal\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-12-31 07:59:09 --> mysqli_sql_exception: Table '`wisata_tegal`.`migrations`' already exists in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TABLE `m...', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `m...')
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `m...')
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `m...')
+#4 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(806): CodeIgniter\Database\Forge->createTable('migrations', true)
+#5 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\wisata-tegal\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\xampp\htdocs\wisata-tegal\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 C:\xampp\htdocs\wisata-tegal\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\wisata-tegal\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\wisata-tegal\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-12-31 08:00:37 --> ErrorException: Cannot redeclare Config\Migrations::$table
+[Method: CLI, Route: migrate]
+in APPPATH\Config\Migrations.php on line 32.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2024-12-31 08:00:54 --> mysqli_sql_exception: Tablespace for table '`wisata_tegal`.`migrations`' exists. Please DISCARD the tablespace before IMPORT in C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\wisata-tegal\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TABLE `m...', 0)
+#1 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `m...')
+#2 C:\xampp\htdocs\wisata-tegal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `m...')
+#3 C:\xampp\htdocs\wisata-tegal\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `m...')
+#4 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(806): CodeIgniter\Database\Forge->createTable('migrations', true)
+#5 C:\xampp\htdocs\wisata-tegal\system\Database\MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\wisata-tegal\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\xampp\htdocs\wisata-tegal\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 C:\xampp\htdocs\wisata-tegal\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 C:\xampp\htdocs\wisata-tegal\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\wisata-tegal\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\wisata-tegal\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-12-31 10:09:37 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/send-password-reset-link]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:11:15 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/send-password-reset-link]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:20:29 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/send-password-reset-link]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:22:59 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/send-password-reset-link]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:31:52 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/send-password-reset-link]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:31:58 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/send-password-reset-link]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:32:15 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/send-password-reset-link]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:34:04 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/send-password-reset-link]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:36:44 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/send-password-reset-link]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:42:54 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/send-password-reset-link]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:45:50 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/forgot-password]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:47:39 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/forgot-password]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:48:02 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/forgot-password]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:48:28 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/forgot-password]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:48:46 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/forgot-password]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:48:58 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/forgot-password]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
+CRITICAL - 2024-12-31 10:57:18 --> ErrorException: Undefined variable $email_data
+[Method: POST, Route: admin/forgot-password]
+in APPPATH\Views\email-templates\forgot-email-template.php on line 3.
+ 1 APPPATH\Views\email-templates\forgot-email-template.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $email_data', 'C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php', 3)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\wisata-tegal\\app\\Views\\email-templates\\forgot-email-template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 APPPATH\Controllers\AuthController.php(143): CodeIgniter\View\View->render('email-templates/forgot-email-template')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->sendPasswordResetLink()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\wisata-tegal\\public\\index.php')
