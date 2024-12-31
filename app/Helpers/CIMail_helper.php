@@ -19,11 +19,11 @@ if (!function_exists('sendMail')) {
         $mail->Password = env('EMAIL_PASSWORD');
         $mail->SMTPSecure = env('EMAIL_ENCRYPTION');
         $mail->Port = env('EMAIL_PORT');
-        $mail->setFrom($emailconfig['mail_from_email'], $emailconfig['mail_from_name']);
-        $mail->addAddress($emailconfig['mail_receiver_email'], $emailconfig['mail_receiver_name']);
+        $mail->setFrom($mailconfig['mail_from_email'], $mailconfig['mail_from_name']);
+        $mail->addAddress($mailconfig['mail_receiver_email'], $mailconfig['mail_receiver_name']);
         $mail->isHTML(true);
-        $mail->Subject = $emailconfig['mail_subject'];
-        $mail->Body = $emailconfig['mail_body'];
+        $mail->Subject = $mailconfig['mail_subject'];
+        $mail->Body = $mailconfig['mail_body'];
         if ($mail->send()) {
             return true;
         } else {

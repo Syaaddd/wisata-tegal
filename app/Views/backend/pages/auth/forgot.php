@@ -10,7 +10,7 @@
     </h6>
 
     <?php $validation = \config\Services::validation(); ?>
-    <form action="<?= route_to('send_password_reset_link') ?>" method="POST">
+    <form action="<?= route_to('admin.send_password_reset_link') ?>" method="POST">
         <?= csrf_field() ?>
 
         <?php if(!empty(session()->getFlashdata('succes'))) : ?>
