@@ -164,9 +164,9 @@
 							data-toggle="dropdown"
 						>
 							<span class="user-icon">
-								<img src="/backend/vendors/images/photo1.jpg" alt="" />
+								<img src="<?= get_user()->picture == null ? '/images/users/default-avatar.png' : '/images/users/'.get_user()->picture ?>" alt="" />
 							</span>
-							<span class="user-name">Ross C. Lopez</span>
+							<span class="user-name"><?= get_user()->name ?></span>
 						</a>
 						<div
 							class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
@@ -184,7 +184,7 @@
 					</div>
 				</div>
 				<div class="github-link">
-					<a href="https://github.com/dropways/deskapp" target="_blank"
+					<a href="https://github.com/Syaaddd" target="_blank"
 						><img src="/backend/vendors/images/github.svg" alt=""
 					/></a>
 				</div>
