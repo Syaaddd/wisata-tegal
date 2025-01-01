@@ -48,7 +48,7 @@
         <div
             class="container-fluid d-flex justify-content-between align-items-center">
             <div class="brand-logo">
-                <a href="login.html">
+                <a href="<?= route_to('admin.home') ?>">
                   <h4>WISATA TEGAL </h4>
                 </a>
             </div>
