@@ -8,6 +8,8 @@ use App\Libraries\CIAuth;
 
 class AdminController extends BaseController
 {
+    protected $helpers = ['cifunctions', 'form', 'url', 'CImail'];
+    
     public function index()
     {
         $data = [
@@ -19,5 +21,12 @@ class AdminController extends BaseController
     public function logoutHandler(){
         CIAuth::forget();
         return redirect()->route('admin.login.form')->with('fail', 'Logout successfully');
+    }
+
+    public function profile(){
+        $data = [
+            'pageTitle' => 'Profile'
+        ];
+        return view('backend/pages/profile', $data);
     }
 }

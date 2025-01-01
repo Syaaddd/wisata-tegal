@@ -1,5 +1,6 @@
 <?php
     namespace App\Libraries;
+    use App\Models\User;
 
     class CIAuth
     {
@@ -39,7 +40,9 @@
             $session = session();
             if( $session->has('userdata') ){
                 if( $session->has('userdata') ){
-                    return $session->get('userdata');
+                    // return $session->get('userdata');
+                    $user = new User();
+                    return $user->asObject()->where('id',CIAuth::id())->first();
                 }else{
                     return null;
                 }
