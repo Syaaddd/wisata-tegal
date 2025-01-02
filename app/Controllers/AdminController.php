@@ -38,7 +38,7 @@ class AdminController extends BaseController
     {
         $validation = \Config\Services::validation();
         $user_id = CIAuth::user()->id;
-    
+
         // Validasi input
         $validation->setRules([
             'name' => 'required',
@@ -51,12 +51,17 @@ class AdminController extends BaseController
                 'is_unique' => 'Username is already taken',
             ],
         ]);
-    
+
         if (!$validation->withRequest($this->request)->run()) {
-            // Jika validasi gagal, kembalikan ke halaman profil dengan pesan kesalahan
-            return redirect()->route('admin.profile')->with('errors', $validation->getErrors());
+            return redirect()->to('/admin/profile?tab=details')
+                ->with('errors_details', $validation->getErrors());
         }
-    
+        
+        return redirect()->to('/admin/profile?tab=details')
+            ->with('success_details', 'Details updated successfully');
+        
+        
+
         // Proses pembaruan data
         $userModel = new User();
         $data = [
@@ -65,9 +70,85 @@ class AdminController extends BaseController
             'bio' => $this->request->getPost('bio'),
         ];
         $userModel->update($user_id, $data);
-    
-        // Jika berhasil, arahkan kembali ke halaman profil dengan pesan sukses
-        return redirect()->route('admin.profile')->with('success', 'Profile updated successfully');
+
     }
-    
+
+
+    public function changePassword()
+    {
+        $validation = \Config\Services::validation();
+        $user_id = CIAuth::user()->id;
+
+        // Validasi input
+        $this->validate([
+                    'current_password' => [
+                        'rules' => 'required|min_length[5]|check_current_password[current_password]',
+                        'errors' => [
+                            'required' => 'Current password is required',
+                            'min_length' => 'Current password must have at least 5 characters',
+                            'check_current_password' => 'Current password is incorrect',
+                        ],
+                    ],
+                    'new_password' => [
+                        'rules' => 'required|min_length[5]|max_length[20]|is_password_strong[new_password]',
+                        'errors' => [
+                            'required' => 'New password is required',
+                            'min_length' => 'New password must have at least 5 characters',
+                            'max_length' => 'New password must not exceed 20 characters',
+                            'is_password_strong' => 'New password is not strong enough',
+                        ],
+                    ],
+                    'confirm_password' => [
+                        'rules' => 'required|matches[new_password]',
+                        'errors' => [
+                            'required' => 'Confirm password is required',
+                            'matches' => 'Confirm password does not match with new password',
+                        ],
+                    ],
+                ]);
+
+                if (!$validation->withRequest($this->request)->run()) {
+                    return redirect()->to('/admin/profile?tab=password')
+                        ->with('errors_password', $validation->getErrors());
+                }
+                
+                return redirect()->to('/admin/profile?tab=password')
+                    ->with('success_password', 'Password updated successfully');
+                
+                
+        // Proses pembaruan data
+        $userModel = new User();
+        $data = [
+            'password' => password_hash($this->request->getPost('new_password'), PASSWORD_DEFAULT),
+        ];
+        $userModel->update($user_id, $data);
+    }
+
+    public function updatePersonalPicture()
+    {
+        $file = $this->request->getFile('croppedImage');
+        $user_id = CIAuth::user()->id;
+        $userModel = new User();
+        $path = 'images/users/';
+        $old_picture = $userModel->find($user_id)['picture'];
+
+        if ($file && $file->isValid()) {
+            $new_filename = 'UIMG_' . $user_id . '_' . $file->getRandomName();
+
+            if ($file->move($path, $new_filename)) {
+                // Hapus gambar lama jika ada
+                if ($old_picture && file_exists($path . $old_picture)) {
+                    unlink($path . $old_picture);
+                }
+
+                // Update gambar di database
+                $userModel->update($user_id, ['picture' => $new_filename]);
+
+                return redirect()->route('admin.profile')->with('success', 'Profile picture updated successfully');
+            }
+        }
+        return redirect()->route('admin.profile')->with('fail', 'Failed to upload cropped image');
+    }
+
+
 }

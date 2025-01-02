@@ -14,8 +14,10 @@ $routes->group('admin', static function($routes){
         $routes->get('home', 'AdminController::index', ['as' => 'admin.home']);
         $routes->get('logout', 'AdminController::logoutHandler', ['as' => 'admin.logout']);
         $routes->get('profile', 'AdminController::profile', ['as' => 'admin.profile']);
-        
+        // $routes->post('update-personal-picture', 'AdminController::updatePersonalPicture', ['as' => 'update-personal-picture']);
+        $routes->post('update-personal-picture', 'AdminController::updatePersonalPicture', ['as' => 'update-personal-picture']);
         $routes->post('update-personal-details', 'AdminController::updatePersonalDetails', ['as' => 'update-personal-details']);
+        $routes->post('change-password', 'AdminController::changePassword', ['as' => 'change-password']);
     });
 
     $routes->group('', ['filter'=>'cifilter:guest'], static function($routes){
